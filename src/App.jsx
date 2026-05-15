@@ -5,6 +5,7 @@ import Resume from "./components/Resume"
 import Services from "./components/Services"
 import Strategy from "./components/Strategy"
 import Projects from "./components/Projects"
+import Events from "./components/Events"
 import Research from "./components/Research"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
@@ -47,6 +48,8 @@ function App() {
         <Strategy />
 
         <Projects />
+
+        <Events />
 
         <Research />
 

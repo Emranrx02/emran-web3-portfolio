@@ -15,6 +15,7 @@ function Navbar() {
           <a href="#services" className="hover:text-white">Services</a>
           <a href="#strategy" className="hover:text-white">Strategy</a>
           <a href="#projects" className="hover:text-white">Projects</a>
+          <a href="#events" className="hover:text-white">Events</a>
           <a href="#research" className="hover:text-white">Research</a>
           <a href="#resume" className="hover:text-white">Resume</a>
           <a href="#contact" className="hover:text-white">Contact</a>
@@ -35,6 +36,7 @@ function Navbar() {
             <a onClick={() => setOpen(false)} href="#services">Services</a>
             <a onClick={() => setOpen(false)} href="#strategy">Strategy</a>
             <a onClick={() => setOpen(false)} href="#projects">Projects</a>
+            <a onClick={() => setOpen(false)} href="#events">Events</a>
             <a onClick={() => setOpen(false)} href="#research">Research</a>
             <a onClick={() => setOpen(false)} href="#resume">Resume</a>
             <a onClick={() => setOpen(false)} href="#contact">Contact</a>
