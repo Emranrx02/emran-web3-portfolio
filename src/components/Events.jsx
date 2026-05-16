@@ -12,14 +12,12 @@ const events = [
     desc: "Community discussion and Web3 awareness event focused on blockchain growth and ecosystem engagement.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7246119600856129537/",
   },
-
   {
     image: Event2,
     title: "CoinEx Community Connect",
     desc: "Interactive blockchain event discussing decentralized systems, P2P payments, and community development.",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7273684314469343232/",
   },
-
   {
     image: Event3,
     title: "Blockchain Community Meetup",
@@ -48,51 +46,55 @@ function Events() {
             </p>
           </div>
 
-          <motion.div
-            className="flex gap-6"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              duration: 26,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-          >
-            {[...events, ...events].map((event, index) => (
-              <div
-                key={index}
-                className="min-w-[85%] overflow-hidden rounded-[30px] border border-white/10 bg-[#111827]/70 p-3 shadow-[0_0_45px_rgba(52,211,153,0.06)] md:min-w-[420px]"
-              >
-                <div className="overflow-hidden rounded-[24px] border border-white/10">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="h-[360px] w-full object-cover object-center md:h-[430px]"
-                  />
+          <div className="overflow-x-auto pb-4 scrollbar-hide">
+            <motion.div
+              className="flex w-max gap-6"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                duration: 30,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {[...events, ...events].map((event, index) => (
+                <div
+                  key={index}
+                  className="w-[82vw] max-w-[360px] shrink-0 overflow-hidden rounded-[30px] border border-white/10 bg-[#111827]/70 p-3 shadow-[0_0_45px_rgba(52,211,153,0.06)] md:w-[420px] md:max-w-none"
+                >
+                  <div className="overflow-hidden rounded-[24px] border border-white/10">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="h-[340px] w-full object-cover object-center md:h-[430px]"
+                    />
+                  </div>
+
+                  <div className="px-3 py-5">
+                    <p className="text-sm font-semibold text-emerald-300">
+                      Web3 Community Event
+                    </p>
+
+                    <h3 className="mt-3 text-xl font-bold md:text-2xl">
+                      {event.title}
+                    </h3>
+
+                    <p className="mt-4 text-sm leading-7 text-gray-400">
+                      {event.desc}
+                    </p>
+
+                    <a
+                      href={event.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 inline-block rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-black transition hover:bg-emerald-300"
+                    >
+                      View LinkedIn Post →
+                    </a>
+                  </div>
                 </div>
-
-                <div className="px-3 py-5">
-                  <p className="text-sm font-semibold text-emerald-300">
-                    Web3 Community Event
-                  </p>
-
-                  <h3 className="mt-3 text-2xl font-bold">{event.title}</h3>
-
-                  <p className="mt-4 text-sm leading-7 text-gray-400">
-                    {event.desc}
-                  </p>
-
-                  <a
-                    href={event.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-6 inline-block rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-black transition hover:bg-emerald-300"
-                  >
-                    View LinkedIn Post →
-                  </a>
-                </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </Reveal>
     </section>

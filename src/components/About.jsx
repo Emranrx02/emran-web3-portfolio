@@ -1,106 +1,158 @@
 import Reveal from "./Reveal"
 import AboutImage from "../assets/about.png"
 
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useSpring,
+} from "framer-motion"
+
+import { useEffect, useRef, useState } from "react"
+
+function Counter({ value, suffix = "" }) {
+  const ref = useRef(null)
+
+  const isInView = useInView(ref, {
+    once: true,
+  })
+
+  const motionValue = useMotionValue(0)
+
+  const springValue = useSpring(motionValue, {
+    duration: 1800,
+  })
+
+  const [display, setDisplay] = useState(0)
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(value)
+    }
+  }, [isInView, value, motionValue])
+
+  useEffect(() => {
+    return springValue.on("change", (latest) => {
+      setDisplay(Math.floor(latest))
+    })
+  }, [springValue])
+
+  return (
+    <span ref={ref}>
+      {display}
+      {suffix}
+    </span>
+  )
+}
+
 function About() {
   return (
     <section
       id="about"
       className="px-6 py-16 md:py-24"
     >
-
       <Reveal>
 
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:gap-14 md:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2">
 
           {/* IMAGE */}
 
-          <div className="flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
 
-            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] p-3 shadow-xl">
+            <div className="overflow-hidden rounded-[32px] border border-white/10 bg-[#111827]/70 p-3 shadow-[0_0_45px_rgba(52,211,153,0.06)]">
 
               <img
                 src={AboutImage}
                 alt="Emran Haque"
-                className="h-[320px] w-full max-w-[280px] rounded-[22px] object-cover object-center md:h-[430px] md:max-w-[320px]"
+                className="h-[420px] w-full rounded-[24px] object-cover object-center md:h-[540px]"
               />
 
             </div>
 
-          </div>
+          </motion.div>
 
-          {/* TEXT */}
+          {/* CONTENT */}
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
 
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[4px] text-emerald-300">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[5px] text-emerald-300">
               About Me
             </p>
 
-            <h2 className="max-w-3xl text-3xl font-bold leading-tight md:text-5xl">
-              From Community Building To Blockchain Innovation
+            <h2 className="text-3xl font-bold leading-tight md:text-5xl">
+              A Peek Into My Journey
             </h2>
 
-            <div className="mt-8 space-y-5">
+            <p className="mt-6 text-sm leading-7 text-gray-400 md:text-base md:leading-8">
+              My journey in the blockchain space began with a deep passion
+              for building online communities and making decentralized
+              technologies more approachable.
+            </p>
 
-              <p className="leading-8 text-gray-400">
-                Passionate about Web3, blockchain communities,
-                and digital growth, I’ve spent the last few years
-                helping projects build stronger online ecosystems.
-              </p>
+            <p className="mt-5 text-sm leading-7 text-gray-400 md:text-base md:leading-8">
+              Over the years, I’ve worked with Web3 projects, organized
+              blockchain events, built community ecosystems, and contributed
+              to growth-focused digital strategies.
+            </p>
 
-              <p className="leading-8 text-gray-400">
-                From CoinEx and ViaBTC to emerging blockchain initiatives,
-                my focus has always been creating meaningful connections
-                between technology and people.
-              </p>
+            {/* STATS */}
 
-              <p className="leading-8 text-gray-400">
-                Today, I combine technical knowledge with real-world
-                blockchain experience to build communities,
-                products, and growth-driven solutions.
-              </p>
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
 
-            </div>
+              <div className="rounded-[24px] border border-white/10 bg-[#111827]/70 p-5">
 
-            {/* SMALL STATS */}
-
-            <div className="mt-10 flex flex-wrap gap-4">
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4">
-                <h3 className="text-2xl font-bold text-emerald-300">
-                  6+
+                <h3 className="text-4xl font-bold text-emerald-300">
+                  <Counter value={6} suffix="+" />
                 </h3>
-                <p className="text-sm text-gray-400">
+
+                <p className="mt-2 text-sm text-gray-400">
                   Years Experience
                 </p>
+
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4">
-                <h3 className="text-2xl font-bold text-sky-300">
-                  50+
+              <div className="rounded-[24px] border border-white/10 bg-[#111827]/70 p-5">
+
+                <h3 className="text-4xl font-bold text-sky-300">
+                  <Counter value={50} suffix="+" />
                 </h3>
-                <p className="text-sm text-gray-400">
+
+                <p className="mt-2 text-sm text-gray-400">
                   Campaigns
                 </p>
+
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-4">
-                <h3 className="text-2xl font-bold text-purple-300">
+              <div className="rounded-[24px] border border-white/10 bg-[#111827]/70 p-5">
+
+                <h3 className="text-4xl font-bold text-purple-300">
                   Web3
                 </h3>
-                <p className="text-sm text-gray-400">
+
+                <p className="mt-2 text-sm text-gray-400">
                   Growth & Research
                 </p>
+
               </div>
 
             </div>
 
-          </div>
+          </motion.div>
 
         </div>
 
       </Reveal>
-
     </section>
   )
 }
