@@ -9,6 +9,7 @@ import Events from "./components/Events"
 import Research from "./components/Research"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
+import Tools from "./components/Tools"
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Services />
 
         <Strategy />
+        <Tools />
 
         <Projects />
 
@@ -56,7 +58,7 @@ function App() {
         <Resume />
 
         <Contact />
-
+        
         <Footer />
 
       </div>
