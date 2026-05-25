@@ -2,18 +2,18 @@ import Reveal from "./Reveal"
 import { motion } from "framer-motion"
 
 const tools = [
-  { name: "React", icon: "⚛️" },
-  { name: "Python", icon: "🐍" },
-  { name: "GitHub", icon: "🐙" },
-  { name: "VS Code", icon: "💻" },
-  { name: "Figma", icon: "🎨" },
-  { name: "Canva", icon: "🖌️" },
   { name: "Telegram", icon: "✈️" },
   { name: "Discord", icon: "💬" },
+  { name: "Twitter/X", icon: "𝕏" },
+  { name: "GitHub", icon: "🐙" },
   { name: "Notion", icon: "📒" },
-  { name: "MetaMask", icon: "🦊" },
+  { name: "Canva", icon: "🎨" },
   { name: "OpenAI", icon: "🧠" },
+  { name: "MetaMask", icon: "🦊" },
   { name: "Analytics", icon: "📊" },
+  { name: "VS Code", icon: "💻" },
+  { name: "React", icon: "⚛️" },
+  { name: "Community", icon: "🌐" },
 ]
 
 function Orbit({ isMobile = false }) {
@@ -34,9 +34,16 @@ function Orbit({ isMobile = false }) {
       >
         <div className="text-center">
           <p className={isMobile ? "text-xl font-bold" : "text-2xl font-bold"}>
-            Tools
+            Growth
           </p>
-          <p className={isMobile ? "text-xl font-bold text-emerald-300" : "text-2xl font-bold text-emerald-300"}>
+
+          <p
+            className={
+              isMobile
+                ? "text-xl font-bold text-emerald-300"
+                : "text-2xl font-bold text-emerald-300"
+            }
+          >
             Stack
           </p>
         </div>
@@ -45,7 +52,11 @@ function Orbit({ isMobile = false }) {
       <motion.div
         className="absolute inset-0"
         animate={{ rotate: 360 }}
-        transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
+        transition={{
+          duration: 36,
+          repeat: Infinity,
+          ease: "linear",
+        }}
       >
         {tools.slice(0, 8).map((tool, index) => {
           const angle = (index / 8) * 360
@@ -78,15 +89,16 @@ function Tools() {
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <p className="mb-4 text-sm font-semibold uppercase tracking-[5px] text-emerald-300">
-              Tools & Technologies
+              Tools & Platforms
             </p>
 
             <h2 className="text-3xl font-bold md:text-5xl">
-              My Working Stack
+              My Community Growth Stack
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-400 md:text-base">
-              Tools I use for development, growth, automation, and Web3 work.
+              Platforms and tools I use to manage communities, plan campaigns,
+              create content, track growth, and support Web3 ecosystems.
             </p>
           </div>
 
