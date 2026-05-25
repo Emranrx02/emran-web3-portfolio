@@ -97,13 +97,7 @@ function About() {
             <p className="mt-6 text-sm leading-7 text-gray-400 md:text-base md:leading-8">
               My journey in the blockchain space began with a deep passion
               for building online communities and making decentralized
-              technologies more approachable.
-            </p>
-
-            <p className="mt-5 text-sm leading-7 text-gray-400 md:text-base md:leading-8">
-              Over the years, I’ve worked with Web3 projects, organized
-              blockchain events, built community ecosystems, and contributed
-              to growth-focused digital strategies.
+              technologies more approachable.and understandable. I’ve always been fascinated by the potential of Web3 to reshape how we interact online, and I’ve dedicated myself to being part of that transformation.
             </p>
 
             {/* STATS */}
