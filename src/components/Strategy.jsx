@@ -65,7 +65,7 @@ function Strategy() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-400 md:text-base">
-              This is the exact execution framework I follow before scaling any Web3 project.
+              some of the core steps and strategies I use to build and grow engaged Web3 communities.
             </p>
 
           </div>

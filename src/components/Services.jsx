@@ -75,8 +75,7 @@ function Services() {
             </h2>
 
             <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-gray-400 md:text-base">
-              Combining blockchain knowledge, technical skills,
-              and community expertise to create impactful digital experiences.
+              Here are some steps and strategies I use to build and grow engaged Web3 communities, products, and research-driven solutions.
             </p>
 
           </div>

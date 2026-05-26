@@ -41,8 +41,7 @@ function Events() {
             </h2>
 
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-gray-400 md:text-base">
-              A collection of community events, blockchain sessions,
-              and ecosystem-building experiences.
+              here are some highlights from my journey of building and growing communities in the Web3 space.
             </p>
           </div>
 

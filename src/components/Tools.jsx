@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 const tools = [
   { name: "Telegram", icon: "✈️" },
   { name: "Discord", icon: "💬" },
-  { name: "Twitter/X", icon: "𝕏" },
+  { name: "X", icon: "𝕏" },
   { name: "GitHub", icon: "🐙" },
   { name: "Notion", icon: "📒" },
   { name: "Canva", icon: "🎨" },
